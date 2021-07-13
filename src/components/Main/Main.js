@@ -63,7 +63,7 @@ export default class Main extends Component {
                             <div style={{marginBottom: 70}}>
                                 <h2>All in one video</h2>
                             </div>
-                            <ReactPlayer  url= 'videos/videofinal.MP4' width="100%" height="600px" playing={true} muted loop={true} />
+                            <ReactPlayer  url= '#/videos/videofinal.MP4' width="100%" height="600px" playing={true} muted loop={true} />
                         </div>
                     </div>
                 </div>
