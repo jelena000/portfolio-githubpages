@@ -1,24 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Main from './components/Main/Main'
+import Header from './components/Header/Header'
+import { BrowserRouter, Route } from 'react-router-dom';
+import Work from './components/Work/Work';
+
+type stateType = {
+  a: number,
+  b? : string,
+}
 
 function App() {
+  const [state, setstate] = useState<stateType>({ a : 1, b: 'a'});
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <BrowserRouter>
+          <Header />
+          <Route exact path="/" component={Main}></Route>
+          <Route path="/work/:id" component={Work}/>
+        </BrowserRouter>
     </div>
   );
 }
